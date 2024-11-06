@@ -15,8 +15,8 @@ int main() {
 
 void menu() {
   int choice;
+  int dec;
   string bin;
-  string dec;
   while (true) {
     cout << "\tEscolha a função a se testar" << endl;
     cout << "\t1 - Conversão Decimal para Binario" << endl;

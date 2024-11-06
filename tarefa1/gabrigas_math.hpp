@@ -1,6 +1,8 @@
 #ifndef gabrigas_math_hpp
 #define gabrigas_math_hpp
 
+#include <string>
+
 /**
  * @brief calcula a potenciação dado uma base e um expoente
  *
@@ -27,22 +29,22 @@ int bit_size(int num);
  * @param decimal O numero a ser convertido
  * @return A representação binaria do numero
  */
-int decimal_to_binary(int decimal);
+std::string decimal_to_binary(int decimal);
 
 /**
- * @brief Converte u
+ * @brief Converte um numero binario para decimal
  *
- * @param bin The binary number to convert.
- * @return The decimal representation of the binary number.
+ * @param bin O numero binario a ser convertido, no formato de string
+ * @return O numero decimal representado pelo binario
  */
-int binary_to_decimal(int bin);
+int binary_to_decimal(std::string bin);
 
 /**
- * @brief Optimized conversion of a binary number to its decimal representation.
+ * @brief Converte um numero binario para decimal de forma otimizada
  *
- * @param bin The binary number to convert.
- * @return The decimal representation of the binary number.
+ * @param bin O numero binario a ser convertido, no formato de string
+ * @return O numero decimal representado pelo binario
  */
-int binary_to_decimal_optimized(int bin);
+int binary_to_decimal_optimized(std::string bin);
 
 #endif // !gabrigas_math_hpp
