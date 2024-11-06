@@ -5,16 +5,22 @@ int pow(int base, int exp) {
     return 1;
 
   int acc = base;
-  while (exp > 1) {
-    acc *= base;
-    exp--;
-  }
+
+  if (exp < 0)
+    while (exp < 0) {
+      acc /= base;
+      exp++;
+    }
+  else
+    while (exp > 1) {
+      acc *= base;
+      exp--;
+    }
 
   return acc;
 }
 
 int bit_size(int num) {
-  //
   int i = 1;
 
   while (num >>= 1)
@@ -24,7 +30,7 @@ int bit_size(int num) {
 }
 
 int decimal_to_binary(int decimal) {
-  int binary = 0; // binary é int, mas a forma a ser lida é como binario
+  int binary = 0;
   int count = 1;
 
   while (decimal) {

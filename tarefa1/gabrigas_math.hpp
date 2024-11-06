@@ -2,32 +2,35 @@
 #define gabrigas_math_hpp
 
 /**
- * @brief Calculates the power of a base raised to an exponent.
+ * @brief calcula a potenciação dado uma base e um expoente
  *
- * @param base The base number.
- * @param exp The exponent to raise the base to.
- * @return The result of base raised to the power of exp.
+ * @param base O numero da base
+ * @param exp O numero do expoente
+ * @return Resultado de B elevado a exp
  */
 int pow(int base, int exp);
 
 /**
- * @brief Calculates the number of bits required to represent a number.
+ * @brief Calcula o numero de bits para representar um numero
  *
- * @param num The number to calculate the bit size for.
- * @return The number of bits required to represent the number.
+ * @param num O Numero para se calcular a quantidade de bits
+ * @return O numero de bits para representar o numero
  */
 int bit_size(int num);
 
 /**
- * @brief Converts a decimal number to its binary representation.
+ * @brief Converte um numero decimal inteiro para binary_to_decimal_optimized
  *
- * @param decimal The decimal number to convert.
- * @return The binary representation of the decimal number. in format 0bXXXXX
+ * A representação binaria adotada por essa implementação foi atraves de numeros
+ * inteiros
+ *
+ * @param decimal O numero a ser convertido
+ * @return A representação binaria do numero
  */
 int decimal_to_binary(int decimal);
 
 /**
- * @brief Converts a binary number to its decimal representation.
+ * @brief Converte u
  *
  * @param bin The binary number to convert.
  * @return The decimal representation of the binary number.
@@ -41,4 +44,5 @@ int binary_to_decimal(int bin);
  * @return The decimal representation of the binary number.
  */
 int binary_to_decimal_optimized(int bin);
+
 #endif // !gabrigas_math_hpp
