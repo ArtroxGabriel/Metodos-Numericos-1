@@ -8,4 +8,5 @@ include_directories(.)
 add_executable(tarefa1
     gabrigas_math.cpp
     gabrigas_math.hpp
-    main.cpp)
+    main.cpp
+        raizes_metodos/robustos/robustos.cpp)

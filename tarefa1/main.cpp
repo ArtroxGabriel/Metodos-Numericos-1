@@ -2,14 +2,21 @@
 #include <iostream>
 #include <ostream>
 #include <string>
+#include <raizes_metodos/robustos/robustos.hpp>
 
 using namespace std;
 
 void menu();
 
 int main() {
-  menu();
+  auto biseccao = Biseccao();
+  auto posFalsa = PosFalsa();
+  double a = 0, b = 1, epsilon = 0.001f;
+  auto func = [](double x) { return std::pow(x, 3) - 9 * x + 3; };
 
+  std::cout << biseccao.getX(a, b, epsilon, func) << std::endl;
+  epsilon = 5e-4;
+  std::cout << posFalsa.getX(a, b, epsilon, func) << std::endl;
   return 0;
 }
 
