@@ -17,13 +17,13 @@ private:
   virtual bool criterioDeParada() = 0;
 };
 
-class Biseccao : public Robusto {
+class Bisseccao : public Robusto {
 private:
   double determinante() override;
   bool criterioDeParada() override;
 };
 
-class PosFalsa : public Robusto {
+class FalsaPosicao : public Robusto {
 private:
   double determinante() override;
   bool criterioDeParada() override;

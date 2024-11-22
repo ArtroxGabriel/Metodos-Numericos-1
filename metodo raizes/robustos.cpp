@@ -43,11 +43,11 @@ double Robusto::getX(double a, double b, double epsilon,
 
 void Robusto::printBench(int i) {
   printf("%-5d|%-15.6e|%-15.6e|%-15.6e|%-15.6e|%-15.6e|%-15.6e|%-15.6e|\n", i,
-         A, Fa, B, Fb, X, Fx, A - B);
+         A, Fa, B, Fb, X, Fx, std::abs(B - A));
 }
 
-double Biseccao::determinante() { return std::abs(A + B) / 2; }
-bool Biseccao::criterioDeParada() { return std::abs(A - B) > epsilon; }
+double Bisseccao::determinante() { return (A + B) / 2; }
+bool Bisseccao::criterioDeParada() { return (B - A) > epsilon; }
 
-double PosFalsa::determinante() { return ((A * Fb - B * Fa) / (Fb - Fa)); }
-bool PosFalsa::criterioDeParada() { return std::abs(Fx) > epsilon; }
+double FalsaPosicao::determinante() { return ((A * Fb - B * Fa) / (Fb - Fa)); }
+bool FalsaPosicao::criterioDeParada() { return std::abs(Fx) > epsilon; }
