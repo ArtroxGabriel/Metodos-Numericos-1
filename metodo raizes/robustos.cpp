@@ -13,13 +13,17 @@ double Robusto::getX(double a, double b, double epsilon,
     std::cout << "ERROR: Funcao nao muda de sinal entre a e b " << std::endl;
     return 0;
   }
+  printf("%-5s|%-15s|%-15s|%-15s|%-15s|%-15s|%-15s|%-15s|\n", "I", "a", "fa",
+         "b", "fb", "x", "fx", "intervX");
 
   int iteracoes = 0;
 
-  do {
-    X = this->determinante();
-    Fx = func(X);
+  X = this->determinante();
+  Fx = func(X);
 
+  this->printBench(iteracoes);
+
+  while (this->criterioDeParada()) {
     if (Fa * Fx < 0) {
       B = X;
       Fb = Fx;
@@ -27,12 +31,19 @@ double Robusto::getX(double a, double b, double epsilon,
       A = X;
       Fa = Fx;
     }
+    X = this->determinante();
+    Fx = func(X);
     ++iteracoes;
-  } while (this->criterioDeParada());
 
-  std::cout << "Numero de iterações: " << iteracoes << std::endl;
+    this->printBench(iteracoes);
+  };
 
   return X;
+}
+
+void Robusto::printBench(int i) {
+  printf("%-5d|%-15.6e|%-15.6e|%-15.6e|%-15.6e|%-15.6e|%-15.6e|%-15.6e|\n", i,
+         A, Fa, B, Fb, X, Fx, A - B);
 }
 
 double Biseccao::determinante() { return std::abs(A + B) / 2; }

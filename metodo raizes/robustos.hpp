@@ -10,6 +10,8 @@ public:
 
   double getX(double, double, double, std::function<double(double)> func);
 
+  void printBench(int);
+
 private:
   virtual double determinante() = 0;
   virtual bool criterioDeParada() = 0;
