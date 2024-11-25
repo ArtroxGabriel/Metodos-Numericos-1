@@ -31,19 +31,22 @@ void menu() {
       cout << "Digite o numero decimal para conversão" << endl;
       cin >> dec;
 
-      cout << decimal_to_binary(dec) << endl;
+      cout << "\t Numero decimal " << dec << " em binario é "
+           << decimal_to_binary(dec) << endl;
       break;
     case 2:
       cout << "Digite o numero binario para conversão" << endl;
       cin >> bin;
 
-      cout << binary_to_decimal(bin /* stoi(bin, nullptr, 2) */) << endl;
+      cout << "\t Numero binario " << bin << " em dec é "
+           << binary_to_decimal(bin) << endl;
       break;
     case 3:
       cout << "Digite o numero binario para conversão" << endl;
       cin >> bin;
 
-      cout << binary_to_decimal_optimized(bin) << endl;
+      cout << "\t Numero binario " << bin << " em dec é "
+           << binary_to_decimal_optimized(bin) << endl;
       break;
     default:
       cout << "Não é uma opção" << endl;
