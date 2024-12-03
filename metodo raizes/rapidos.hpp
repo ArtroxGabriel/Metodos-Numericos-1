@@ -39,10 +39,15 @@ protected:
   void printBench(int) override;
 };
 
-// PREGUIÇA DE FAZER ESSE
 class Secante : public Rapido {
-private:
+public:
+  Secante(double, double, double, double, std::function<double(double)>);
+
+protected:
+  double previous_func;
+
   double funcao_de_iteracao() override;
   bool criterio_de_parada() override;
+  void printBench(int) override;
 };
 #endif // !RAPIDOS_HPP
