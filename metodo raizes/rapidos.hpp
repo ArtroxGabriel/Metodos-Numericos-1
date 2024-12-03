@@ -8,7 +8,7 @@ class Rapido {
 public:
   double previous_x, curr_x, curr_func, epsilon1, epsilon2;
 
-  std::function<double(double)> qsi;
+  std::function<double(double)> func, aux_func;
 
   double getX(double, double, double, std::function<double(double)>,
               std::function<double(double)>);
@@ -16,19 +16,26 @@ public:
   void printBench(int);
 
 private:
-  virtual double determinante() = 0;
-  virtual bool criterioDeParada() = 0;
+  virtual double funcao_de_iteracao() = 0;
+  virtual bool criterio_de_parada() = 0;
 };
 
 class PontoFixo : public Rapido {
 private:
-  double determinante() override;
-  bool criterioDeParada() override;
+  double funcao_de_iteracao() override;
+  bool criterio_de_parada() override;
 };
 
-// class FalsaPosicao : public Robusto {
-// private:
-//   double determinante() override;
-//   bool criterioDeParada() override;
-// };
+class NewtonRaphson : public Rapido {
+private:
+  double funcao_de_iteracao() override;
+  bool criterio_de_parada() override;
+};
+
+// PREGUIÇA DE FAZER ESSE
+class Secante : public Rapido {
+private:
+  double funcao_de_iteracao() override;
+  bool criterio_de_parada() override;
+};
 #endif // !RAPIDOS_HPP
